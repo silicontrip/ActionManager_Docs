@@ -62,3 +62,21 @@ Using this I was able to write some javascript that serialises a Descriptor obje
 </Action>
 ```
 This captures all the information required to reproduce the call and also makes it easy to omit parameters and determine if they are required.
+
+## Detailed description of the XML 
+The `Action` tag is used to specify that this XML is used to describe an action, the first child is `Type` which is the name of the Action, this is the first
+parameter of the `executeAction(` call. The next child is the `Descriptor` If an action call requires parameters, they will always be stored in a descriptor.
+The descriptor is made of key value pairs, this needs to be order preserving, as a value immediately follows its key.  There are a number of primative types, which require only 1 value
+such as `Boolean`, `Class`, `Data`, `Double`, `Integer`, `LargeInteger`, `Path` and `String` and only require a single call to `descriptor.putTYPE(key,value)`  More complex objects are
+`Enumerated` has both an Enumerated type, and value. `List` requires an ActionList to be created first. `Object` requires another ActionDescriptor to be created. 
+`Reference` requires an ActionReference.  `UnitDouble` requires a unitType ID and a value.
+
+As I encounter more calls and objects I will endevour to document them here.
+
+## Actions
+
+Contain Execute Action calls, each begin with the `<Action>` tag.
+
+## Types
+
+Contain Object Types and begin with the `<Descriptor>` tag.  Some types also have the requesting Reference that was passed to `executeActionGet(`
