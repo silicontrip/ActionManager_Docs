@@ -23,12 +23,15 @@ executeAction( idOpn, desc8, DialogModes.NO );
 This format even makes it difficult to understand what the Open call needs to run correctly.  And also requires understanding of what the 
 three Javascript objects are for.
 
-### ActionDescriptors are most similar to a Dictionary object.  They have keys (in TypeID) and are strongly typed, there is a `put` and `get` method
+### ActionDescriptors 
+Are most similar to a Dictionary object.  They have keys (in TypeID) and are strongly typed, there is a `put` and `get` method
 for each type.  Also there are a number of complex objects; `Enumerated`, `Object`, `UnitDouble` and `Reference`
 
-### ActionLists are simply lists or arrays of types and values and behave like normal dynamic lists.
+### ActionLists 
+Are simply lists or arrays of types and values and behave like normal dynamic lists.
 
-### ActionReferences store types and values, but only 1 value of the same type, to store a second value of the same type add another reference.
+### ActionReferences 
+Store types and values, but only 1 value of the same type, to store a second value of the same type add another reference.
 
 This can be quite difficult to visualise how references, descriptors and executeAction call all join together.
 
