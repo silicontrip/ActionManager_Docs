@@ -1,0 +1,19 @@
+<Object>
+  <Type>rectangle</Type>
+  <Descriptor>
+    <Key>top</Key>
+    <UnitDouble/>
+    <Key>left</Key>
+    <UnitDouble/>
+    <Key>bottom</Key>
+    <UnitDouble/>
+    <Key>right</Key>
+    <UnitDouble/>
+  </Descriptor>
+</Object>
+
+
+<UnitDouble>
+  <Type>pixelsUnit</Type> 
+  <Value></Value>
+</UnitDouble>
