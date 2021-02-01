@@ -2,6 +2,14 @@
 
 select an area on the current active layer and current document.
 
+## Description
+
+```
+set(Reference _, Enumerated to)
+set(Reference _, Class to)
+set(Reference _, Object to)
+```
+
 ## Parameters
 
 - null : Reference of Property type and Channel class.
