@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Action>
+  <Type>toolModalStateChanged</Type>
+  <Descriptor>
+    <Key>level</Key>
+    <Integer>1</Integer>
+    <Key>state</Key>
+    <Enumerated>
+      <Type>state</Type>
+      <Value>enter</Value>
+    </Enumerated>
+    <Key>tool</Key>
+    <Object>
+      <Type>tool</Type>
+      <Descriptor>
+        <Key>ID</Key>
+        <String>rgmt</String>
+        <Key>title</Key>
+        <String>Rectangular Marquee Tool</String>
+      </Descriptor>
+    </Object>
+    <Key>kind</Key>
+    <Enumerated>
+      <Type>kind</Type>
+      <Value>mouse</Value>
+    </Enumerated>
+    <Key>kcanDispatchWhileModal</Key>
+    <Boolean>true</Boolean>
+  </Descriptor>
+</Action>

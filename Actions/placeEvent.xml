@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Action>
+  <Type>placeEvent</Type>
+  <Descriptor>
+    <Key>offset</Key>
+    <Object>
+      <Type>offset</Type>
+      <Descriptor>
+        <Key>vertical</Key>
+        <UnitDouble>
+          <Type>pixelsUnit</Type>
+          <Value>0.00</Value>
+        </UnitDouble>
+        <Key>horizontal</Key>
+        <UnitDouble>
+          <Type>pixelsUnit</Type>
+          <Value>0.00</Value>
+        </UnitDouble>
+      </Descriptor>
+    </Object>
+    <Key>freeTransformCenterState</Key>
+    <Enumerated>
+      <Type>quadCenterState</Type>
+      <Value>QCSAverage</Value>
+    </Enumerated>
+    <Key>null</Key>
+    <Path>/volumes/blah/blah/woof/woof.png</Path>
+    <Key>ID</Key>
+    <Integer>12</Integer>
+  </Descriptor>
+</Action> 

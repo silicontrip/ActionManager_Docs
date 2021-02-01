@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Action>
+  <Type>hide</Type>
+  <Descriptor>
+    <Key>null</Key>
+    <List>
+      <Reference>
+        <Class>layer</Class>
+        <Name>Artboard 9</Name>
+      </Reference>
+    </List>
+  </Descriptor>
+</Action>

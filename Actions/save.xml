@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<Action>
+  <Type>save</Type>
+  <Descriptor>
+    <Key>as</Key>
+    <Object>
+      <Type>PNGFormat</Type>
+      <Descriptor>
+        <Key>method</Key>
+        <Enumerated>
+          <Type>PNGMethod</Type>
+          <Value>thorough</Value>
+        </Enumerated>
+      </Descriptor>
+    </Object>
+    <Key>in</Key>
+    <Path>/C:%5CUsers%5Cmheath%5CDocuments%5C20201218-BillboardGFX%5Cfilename.png</Path>
+    <Key>documentID</Key>
+    <Integer>269</Integer>
+    <Key>saveStage</Key>
+    <Enumerated>
+      <Type>saveStageType</Type>
+      <Value>saveBegin</Value>
+    </Enumerated>
+  </Descriptor>
+</Action>
+
+== JPEG ==
+
+<?xml version="1.0"?>
+<Action>
+<Type>save</Type>
+<Descriptor>
+  <Key>as</Key>
+  <Object>
+    <Type>JPEG</Type>
+    <Descriptor>
+      <Key>extendedQuality</Key>
+      <Integer>12</Integer>
+      <Key>scans</Key>
+      <Integer>3</Integer>
+      <Key>matteColor</Key>
+      <Enumerated>
+        <Type>matteColor</Type>
+        <Value>none</Value>
+      </Enumerated>
+    </Descriptor>
+  </Object>
+  <Key>in</Key>
+  <Path>~/Documents/20201218-BillboardGFX/abc.jpg</Path>
+  <Key>documentID</Key>
+  <Integer>999</Integer>
+  <Key>copy</Key>
+  <Boolean>true</Boolean>
+  <Key>saveStage</Key>
+  <Enumerated>
+    <Type>saveStageType</Type>
+    <Value>saveBegin</Value>
+  </Enumerated>
+</Descriptor>
+</Action>
+
+== RESPONSE ==
+
+<?xml version="1.0"?>
+<Descriptor>
+  <Key>as</Key>
+  <Object>
+    <Type>JPEG</Type>
+    <Descriptor>
+      <Key>extendedQuality</Key>
+      <Integer>12</Integer>
+      <Key>scans</Key>
+      <Integer>3</Integer>
+      <Key>matteColor</Key>
+      <Enumerated>
+        <Type>matteColor</Type>
+        <Value>none</Value>
+      </Enumerated>
+    </Descriptor>
+  </Object>
+  <Key>in</Key>
+  <Path>~/Documents/20201218-BillboardGFX/abc.jpg</Path>
+  <Key>documentID</Key>
+  <Integer>219</Integer>
+  <Key>copy</Key>
+  <Boolean>true</Boolean>
+  <Key>lowerCase</Key>
+  <Boolean>true</Boolean>
+  <Key>saveStage</Key>
+  <Enumerated>
+    <Type>saveStageType</Type>
+    <Value>saveSucceeded</Value>
+  </Enumerated>
+</Descriptor>

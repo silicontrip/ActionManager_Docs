@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Action>
+  <Type>paste</Type>
+  <Descriptor>
+    <Key>antiAlias</Key>
+    <Enumerated>
+      <Type>antiAliasType</Type>
+      <Value>antiAliasNone</Value>
+    </Enumerated>
+    <Key>as</Key>
+    <Class>pixel</Class>
+  </Descriptor>
+</Action>

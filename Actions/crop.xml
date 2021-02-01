@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Action>
+  <Type>crop</Type>
+  <Descriptor>
+    <Key>delete</Key>
+    <Boolean>true</Boolean>
+  </Descriptor>
+</Action>

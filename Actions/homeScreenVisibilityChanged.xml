@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<Action>
+  <Type>homeScreenVisibilityChanged</Type>
+  <Descriptor>
+    <Key>dontRecord</Key>
+    <Boolean>true</Boolean>
+    <Key>forceNotify</Key>
+    <Boolean>true</Boolean>
+    <Key>visible</Key>
+    <Boolean>true</Boolean>
+  </Descriptor>
+</Action>
