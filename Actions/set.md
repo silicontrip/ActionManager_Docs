@@ -1,8 +1,8 @@
-# set
+# Action `set|'setd'`
 
-select an area on the current active layer and current document.
+Select an area on the current active document and layer.
 
-## Description
+## Syntax
 
 ```
 set(Reference _, Enumerated to)
@@ -12,8 +12,15 @@ set(Reference _, Object to)
 
 ## Parameters
 
-- null : Reference of Property type and Channel class.
-- to : the area to select.  Can be Rectangle Object, Enumerated Ordinal.None or a Channel class Reference with an Enumation of channel type, to select the bounding box of that channel.
+| Name | Type | Description
+| --- | --- | --- |
+`null|'null'` | `Reference channel` | A reference of type `channel` containing a `Property`.
+`to|'T   '` | `Object Rectangle|'Rctn'` | The rectangle area to select.  
+|  | `Enumerated Ordinal|'Ordn'` | Use `none|'None'` to remove the current selection.
+|  | `Reference channel|'Chnl'` | A `Reference` To select the boundingbox of the target layer.
+
+## Return Values
+
 
 ## Example
 ### Select Rectangle

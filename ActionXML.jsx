@@ -1,4 +1,28 @@
 
+var doc1 = new XML('<?xml version="1.0"?>' +
+"<Action>" +
+  "<Type>open</Type>" +
+  "<Descriptor>" +
+	"<Key>dontRecord</Key>" +
+      "<Boolean>false</Boolean>" +
+      "<Key>forceNotify</Key>" +
+      "<Boolean>true</Boolean>" +
+      "<Key>null</Key>" +
+      "<Path>~/Documents/20201218-BillboardGFX/hardcoded.png</Path>" +
+      "<Key>documentID</Key>" +
+      "<Integer>219</Integer>" +
+    "</Descriptor>" +
+"</Action>");
+
+var doc = new XML('<?xml version="1.0"?>' +
+"<Action>" +
+  "<Type>open</Type>" +
+  "<Descriptor>" +
+      "<Key>null</Key>" +
+      "<Path>~/Documents/20201218-BillboardGFX/hardcoded.png</Path>" +
+    "</Descriptor>" +
+"</Action>");
+
 function valueXML (type,ref,key)
 {
 	var xml = "";
@@ -190,8 +214,62 @@ function saveXMLDescriptor (fn,desc)
 	f.close();
 }
 
-function XMLDescriptor (xml)
+function makeReference (xml)
 {
+	var nxml = new XML(xml);
+/*
+	f=new File("c:/Users/mheath/Documents/20201218-BillboardGFX/reference.xml");
+	var r = f.open("w");
+	r= f.write(xml);
+	f.close();
+*/
+	var rr = new ActionReference();
+	var refx = nxml.xpath('/Reference/*');
+	// alert(refx);
+	var classId = 0;
+
+	for (var i=0; i<refx.length(); i++)
+	{
+		// alert(nxml[i]);
+		var val = refx[i].text();
+		var vtype = "" + refx[i].name();
+
+		//alert ( "|" + vtype + "| " +val);
+
+		var kid = stringIDToTypeID(val);
+
+		switch (vtype) 
+		{
+			case "Class":
+				classId = kid;
+				break;
+			case "Property":
+				if (classId != 0)
+					rr.putProperty(classId,kid);
+				else 
+					alert ("I have no class."); // but lots of attitude
+				break;
+			default:
+				alert ("Guess what you're making next: "+vtype);
+		}
+	}
+	return rr;
+	
+}
+
+function makeObject (xml)
+{
+	var nx = xml.xpath('/Object/*');
+
+	
+
+	alert (nx);
+	return "";
+}
+
+function makeDescriptor (xml)
+{
+//	alert (xml);
 	var dd = new ActionDescriptor();
 	for (i=0; i < xml.length(); i=i+2)
 	{
@@ -202,6 +280,8 @@ function XMLDescriptor (xml)
 		var strType = "" + vtype;
 	//	alert("."+vtype+".");
 
+		var refCount =0;
+		var objCount =0;
 		var keyID = stringIDToTypeID(key);
 
 		switch (strType)
@@ -215,11 +295,41 @@ function XMLDescriptor (xml)
 			case "Integer":
 				dd.putInteger(keyID,parseInt(val));
 				break;
+			case "Reference":
+				var refxml = xml[i+1];
+				// var refi = refxml.xpath("Reference");
+				var refobj = makeReference(refxml);
+				dd.putReference(keyID,refobj);
+				break;
+			case "Object":
+				var obj = new XML (xml[i+1]);
+				var nx = obj.xpath('/Object/*');
+				var type = nx[0].text();
+				var typeID = stringIDToTypeID(type);
+				var descxml = nx[1].xpath('/Descriptor/*');
+				//alert(descxml);
+
+				var desc = makeDescriptor(descxml);
+
+				dd.putObject(keyID,typeID,desc);
+				break;
+			case "UnitDouble":
+				var uxml = new XML(xml[i+1])
+				var ud= uxml.xpath('/UnitDouble/*');
+				//alert(ud);
+				var val = ud[1];
+				var type = ud[0];
+
+				var typeID = stringIDToTypeID(type);
+
+				dd.putUnitDouble(keyID,typeID,parseFloat(val));
+
+			//	alert (type);
+			//	alert (val);
+				break;
 			default:
 				alert("type: " + strType + " not implemented");
-			// Will be adding more 
 		}
-
 	}
 	return dd;
 }
@@ -229,13 +339,9 @@ function executeXML (s)
 	var exe = s.xpath('/Type');
 	var exeID = stringIDToTypeID(exe);
 	var tdesc = s.xpath('/Descriptor/*');
-
 	var desc = makeDescriptor(tdesc);
 
-	//var xx = descriptorXML(desc);
-	//alert (xx);
-
-	executeAction(exeID,desc,DialogModes.NO);
+	return executeAction(exeID,desc,DialogModes.NO);
 
 }
 
