@@ -17,14 +17,14 @@ set(Reference _, Object to)
 `to\|'T   '` | `Object`, `Reference` or `Enumerated` | The value to set the property to.  
 
 #### null|'null'
-* To set the selection region use a `Reference` of `Class channel\|'Chnl'` and `Property selection\|'fsel'`
-* To set the Application units preferences use a `Reference` of `Class property\|'Prpr'` and `Property unitsPrefs\|'UntP'` with a `Class application\|'capp'` and `Enumerated ordinal\|'Ordn'` with the value `targetEnum\|'Trgt'`
+* To set the selection region use a `Reference` of `Class channel|'Chnl'` and `Property selection|'fsel'`
+* To set the Application units preferences use a `Reference` of `Class property|'Prpr'` and `Property unitsPrefs|'UntP'` with a `Class application|'capp'` and `Enumerated ordinal|'Ordn'` with the value `targetEnum|'Trgt'`
 
 #### to|'T   '
-* To select a rectangle use an `Object` of the `rectangle\|Rctn` type.
-* To select a layers bounding box use a `Reference` of `Class channel\|'Chnl'` and `Enumerated channel\|'Chnl'` with the value `transparencyEnum\|'Trsp'`.
-* To cancel the selection region use an `Enumerated ordinal\|'Ordn'` with the value `none\|'None'`.
-* To change the Application Preferences use an `Object` of the `channel\|'Chnl'` type.
+* To select a rectangle use an `Object` of the `rectangle|Rctn` type.
+* To select a layers bounding box use a `Reference` of `Class channel|'Chnl'` and `Enumerated channel|'Chnl'` with the value `transparencyEnum|'Trsp'`.
+* To cancel the selection region use an `Enumerated ordinal|'Ordn'` with the value `none|'None'`.
+* To change the Application Preferences use an `Object` of the `unitsPrefs|'UntP'` type.
 
 
 
