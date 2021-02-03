@@ -21,11 +21,11 @@ set(Reference _, Object to)
 * To set the Application units preferences use a `Reference` of `Class property|'Prpr'` and `Property unitsPrefs|'UntP'` with a `Class application|'capp'` and `Enumerated ordinal|'Ordn'` with the value `targetEnum|'Trgt'`
 
 #### to|'T   '
+<<<<<<< HEAD
 * To select a rectangle use an `Object` of the `rectangle|Rctn` type.
 * To select a layers bounding box use a `Reference` of `Class channel|'Chnl'` and `Enumerated channel|'Chnl'` with the value `transparencyEnum|'Trsp'`.
 * To cancel the selection region use an `Enumerated ordinal|'Ordn'` with the value `none|'None'`.
 * To change the Application Preferences use an `Object` of the `unitsPrefs|'UntP'` type.
-
 
 
 ## Return Values
