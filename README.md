@@ -31,7 +31,7 @@ for each type.  Also there are a number of complex objects; `Enumerated`, `Objec
 Are simply lists or arrays of types and values and behave like normal dynamic lists.
 
 ### ActionReferences 
-Store types and values, but only 1 value of the same type, to store a second value of the same type add another reference.
+Stores a single type and optional value, to store a second value and type add another reference.
 
 This can be quite difficult to visualise how references, descriptors and executeAction call all join together.
 

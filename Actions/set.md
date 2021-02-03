@@ -14,7 +14,7 @@ set(Reference _, Object to)
 | Name | Type | Description
 | --- | --- | --- |
 `null\|'null'` | `Reference` | The property to be changed.
-`to\|'T   '` | `Object` | The value to set the property to.  
+`to\|'T   '` | `Object`, `Reference` or `Enumerated` | The value to set the property to.  
 
 #### null|'null'
 * To set the selection region use a `Reference` of `Class channel\|'Chnl'` and `Property selection\|'fsel'`
