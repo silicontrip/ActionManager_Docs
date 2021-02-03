@@ -1,7 +1,6 @@
 # Action `set|'setd'`
 
-**Set** the selection area on the current active document and layer.
-
+**Set** a property of the application or document or selection region.
 ## Syntax
 
 ```
@@ -14,14 +13,24 @@ set(Reference _, Object to)
 
 | Name | Type | Description
 | --- | --- | --- |
-`null\|'null'` | `Reference channel\|'Chnl'` | A reference of type `channel` containing the selection `Property`.
-`to\|'T   '` | `Object Rectangle\|'Rctn'` | The rectangular area to select.  
-|  | `Enumerated Ordinal\|'Ordn'` | Use `none\|'None'` to remove the current selection.
-|  | `Reference channel\|'Chnl'` | A `Reference` To select the boundingbox of the target layer.
+`null\|'null'` | `Reference` | The property to be changed.
+`to\|'T   '` | `Object` | The value to set the property to.  
+
+#### null|'null'
+* To set the selection region use a `Reference` of `Class channel\|'Chnl'` and `Property selection\|'fsel'`
+* To set the Application units preferences use a `Reference` of `Class property\|'Prpr'` and `Property unitsPrefs\|'UntP'` with a `Class application\|'capp'` and `Enumerated ordinal\|'Ordn'` with the value `targetEnum\|'Trgt'`
+
+#### to|'T   '
+* To select a rectangle use an `Object` of the `rectangle\|Rctn` type.
+* To select a layers bounding box use a `Reference` of `Class channel\|'Chnl'` and `Enumerated channel\|'Chnl'` with the value `transparencyEnum\|'Trsp'`.
+* To cancel the selection region use an `Enumerated ordinal\|'Ordn'` with the value `none\|'None'`.
+* To change the Application Preferences use an `Object` of the `channel\|'Chnl'` type.
+
+
 
 ## Return Values
 
-The unmodified requested ActionDescriptor.
+The unmodified requested ActionDescriptor is returned back to the caller.
 
 ## XML Examples
 ### Select Rectangle
@@ -103,5 +112,29 @@ The unmodified requested ActionDescriptor.
       </Enumerated>
     </Reference>
   </Descriptor>
+</Action>
+```
+### Set Measurement Units
+```xml
+<Action>
+<Type>set</Type>
+<Descriptor>
+<Key>null</Key>
+<Reference>
+<Class>property</Class>
+<Property>unitsPrefs</Property>
+</Reference>
+<Key>to</Key>
+<Object>
+<Type>unitsPrefs</Type>
+<Descriptor>
+<Key>rulerUnits</Key>
+<Enumerated>
+<Type>rulerUnits</Type>
+<Value>rulerPixels</Value>
+</Enumerated>
+</Descriptor>
+</Object>
+</Descriptor>
 </Action>
 ```

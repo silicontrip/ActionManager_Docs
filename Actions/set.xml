@@ -72,6 +72,7 @@
     </Reference>
   </Descriptor>
 </Action>
+
 <?xml version="1.0"?>
 <Action>
   <Type>set</Type>
@@ -80,6 +81,11 @@
     <Reference>
       <Class>property</Class>
       <Property>unitsPrefs</Property>
+	  <Class>application</Class>
+      <Enumerated>
+        <Type>ordinal</Type>
+        <Value>targetEnum</Value>
+      </Enumerated>
     </Reference>
     <Key>to</Key>
     <Object>

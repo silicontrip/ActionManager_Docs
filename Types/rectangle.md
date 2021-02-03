@@ -1,12 +1,15 @@
 
 # Object `rectangle|'Rctn'`
 
-An area defined by top, bottom, left and right
+An area defined by top, bottom, left and right co-ordinates.
 
 # Properties
 | Name | Type | Description |
-| --- | --- |
-| `top|'Top '` | pixelsUnit |
+| --- | --- | --- |
+| `top\|'Top '` | `pixelsUnit unitDouble` | the top edge of the rectangle.
+| `left\|'Left'` | `pixelsUnit unitDouble` | the left edge.
+| `bottom\|'Btom'` | `pixelsUnit unitDouble` | the bottom edge.
+| `right\|'Rght'` | `pixelsUnit unitDouble` | the right edge.
 
 ```xml
 <Object>
