@@ -5,7 +5,7 @@ Documenting the Action Manager executeAction calls.
 
 The Action Manager interface is an alternate interface to Adobe's scripting using ExtendScript. (old version of JavaScript) This interface is mostly undocumented,
 the only knowledge about this interface is discovered using a plugin called Scripting Listener.  Even with scripting listener the resulting javascript code
-it (let's be honest) horrible.  Here is the Open file call;
+is (let's be honest) horrible.  Here is the Open file call;
 
 ```
 var idOpn = charIDToTypeID( "Opn " );
@@ -31,7 +31,7 @@ for each type.  Also there are a number of complex objects; `Enumerated`, `Objec
 Are simply lists or arrays of types and values and behave like normal dynamic lists.
 
 ### ActionReferences 
-Stores a single type and optional value, to store a second value and type add another reference.
+Stores a single type and optional value, a second type and value shows as another `ActionReference` obtained using the `getContainer()` method.
 
 This can be quite difficult to visualise how references, descriptors and executeAction call all join together.
 
@@ -66,10 +66,27 @@ This captures all the information required to reproduce the call and also makes 
 ## Detailed description of the XML 
 The `Action` tag is used to specify that this XML is used to describe an action, the first child is `Type` which is the name of the Action, this is the first
 parameter of the `executeAction(` call. The next child is the `Descriptor` If an action call requires parameters, they will always be stored in a descriptor.
-The descriptor is made of key value pairs, this needs to be order preserving, as a value immediately follows its key.  There are a number of primative types, which require only 1 value
+The descriptor is made of key value pairs, this needs to be order preserving, as a value immediately follows its key.  There are a number of primitive types, which require only 1 value
 such as `Boolean`, `Class`, `Data`, `Double`, `Integer`, `LargeInteger`, `Path` and `String` and only require a single call to `descriptor.putTYPE(key,value)`  More complex objects are
 `Enumerated` has both an Enumerated type, and value. `List` requires an ActionList to be created first. `Object` requires another ActionDescriptor to be created. 
 `Reference` requires an ActionReference.  `UnitDouble` requires a unitType ID and a value.
+
+| Type | XML Representation |
+| --- | --- |
+`Boolean` | `<Boolean>true</Boolean>`
+`Class` | `<Class>channel</Class>`
+`Data` | `<Data>string of data</Data>`
+`Double` | `<Double>123.456</Double>`
+`Enumerated` | `<Enumerated><Type>ordinal</Type><Value>allEnum</Value></Enumerated>`
+`Integer` | `<Integer>12</Integer>`
+`LargeInteger` | `<LargeInteger>1000000000000000</LargeInteger>`
+`List` | `<List><Integer>1</Integer><Integer>2</Integer></List>`
+`Object` | `<Object><Type>findReplace</Type><Descriptor><Key>find</Key><String>MMM</String></Descriptor></Object>`
+`Path` | `<Path>/A/b/c/d.jpg</Path>`
+`Reference` | `<Reference><Class>property</Class><Property>findReplace</Property></Reference>`
+`String` | `<String>abc123</String>`
+`UnitDouble` | `<UnitDouble><Type>pixelsUnit</Type><Value>3268</Value></UnitDouble>`
+
 
 As I encounter more calls and objects I will endevour to document them here.
 
@@ -79,4 +96,6 @@ Contain Execute Action calls, each begin with the `<Action>` tag.
 
 ## Types
 
-Contain Object Types and begin with the `<Descriptor>` tag.  Some types also have the requesting Reference that was passed to `executeActionGet(`
+Contain Object Types and begin with the `<Descriptor>` tag.  Some types also have the requesting Reference that was passed to `executeActionGet()`
+
+
