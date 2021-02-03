@@ -157,10 +157,10 @@ function referenceXML (reference)
 		xml = xml +"<Property>"+propn+"</Property>\n";
 	} catch (e) { ; }
 
-//	var ref = reference.getContainer();  // returns a reference object
-//	xml = xml + referenceXML(ref);  // will we just infinitely loop..
-	// no it appears to crash at the first query
-
+	try {
+		var ref = reference.getContainer().getDesiredClass(); // i do think this is a silly way to get reference values
+		xml = xml + referenceXML(ref);
+	} catch (e) { ; }
 
 	xml = xml + "</Reference>\n";
 	return xml;

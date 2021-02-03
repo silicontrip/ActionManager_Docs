@@ -1,6 +1,6 @@
 # Action `set|'setd'`
 
-Select an area on the current active document and layer.
+**Set** the selection area on the current active document and layer.
 
 ## Syntax
 
@@ -14,15 +14,16 @@ set(Reference _, Object to)
 
 | Name | Type | Description
 | --- | --- | --- |
-`null\|'null'` | `Reference channel` | A reference of type `channel` containing a `Property`.
-`to\|'T   '` | `Object Rectangle\|'Rctn'` | The rectangle area to select.  
-|  | `Enumerated Ordinal\|'Ordn'` | Use `none|'None'` to remove the current selection.
+`null\|'null'` | `Reference channel\|'Chnl'` | A reference of type `channel` containing the selection `Property`.
+`to\|'T   '` | `Object Rectangle\|'Rctn'` | The rectangular area to select.  
+|  | `Enumerated Ordinal\|'Ordn'` | Use `none\|'None'` to remove the current selection.
 |  | `Reference channel\|'Chnl'` | A `Reference` To select the boundingbox of the target layer.
 
 ## Return Values
 
+The unmodified requested ActionDescriptor.
 
-## Example
+## XML Examples
 ### Select Rectangle
 ```xml
 <?xml version="1.0"?>
